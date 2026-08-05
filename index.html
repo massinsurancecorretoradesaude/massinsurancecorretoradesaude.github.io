@@ -1,374 +1,231 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mass Insurance | Corretora de Seguros</title>
-    <style>
-        /* Reset e Definições Gerais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central de Ajuda</title>
 
-        :root {
-            --primary-color: #0f2b46; /* Azul escuro corporativo */
-            --secondary-color: #1b4d7c; /* Azul médio */
-            --accent-color: #e67e22; /* Laranja para destaque/confiança */
-            --light-bg: #f8fafc;
-            --text-dark: #333333;
-            --text-light: #ffffff;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-        body {
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: var(--light-bg);
-        }
+body{
+    background:#f8f8f8;
+    color:#333;
+}
 
-        /* Menu de Navegação */
-        header {
-            background-color: var(--primary-color);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+header{
+    background:#00994d;
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
 
-        .logo {
-            color: var(--text-light);
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
+.btn-topo{
+    background:white;
+    color:#00994d;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:8px;
+    font-weight:bold;
+}
 
-        .logo span {
-            color: var(--accent-color);
-        }
+.hero{
+    background:linear-gradient(135deg,#00994d,#00b35a);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
+.hero h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
 
-        .nav-menu a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+.hero p{
+    font-size:20px;
+    max-width:800px;
+    margin:auto;
+}
 
-        .nav-menu a:hover {
-            color: var(--accent-color);
-        }
+.botoes{
+    margin-top:35px;
+}
 
-        /* Banner Principal (Hero) */
-        .hero {
-            background: linear-gradient(rgba(15, 43, 70, 0.85), rgba(15, 43, 70, 0.85)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--text-light);
-            margin-top: 70px;
-            padding: 0 20px;
-        }
+.btn{
+    display:inline-block;
+    background:white;
+    color:#00994d;
+    text-decoration:none;
+    padding:15px 30px;
+    margin:10px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:18px;
+}
 
-        .hero-content h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
+.sobre{
+    padding:70px 10%;
+    background:white;
+    text-align:center;
+}
 
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+.sobre h2{
+    color:#00994d;
+    margin-bottom:20px;
+}
 
-        .btn-cta {
-            background-color: var(--accent-color);
-            color: var(--text-light);
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
 
-        .btn-cta:hover {
-            background-color: #d35400;
-        }
+.card{
+    background:#f4f4f4;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
 
-        /* Container de Seções */
-        .section {
-            padding: 80px 5% 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.card h3{
+    color:#00994d;
+    margin-bottom:15px;
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 40px;
-            position: relative;
-        }
+.cta{
+    background:#00994d;
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent-color);
-            margin: 10px auto 0;
-        }
+.cta h2{
+    margin-bottom:20px;
+    font-size:35px;
+}
 
-        /* Quem Somos */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
+footer{
+    background:#006b36;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
 
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        /* Serviços / Seguros */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background-color: var(--text-light);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid var(--secondary-color);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .service-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        /* Política de Privacidade */
-        .privacy-box {
-            background-color: var(--text-light);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .privacy-box h3 {
-            color: var(--secondary-color);
-            margin: 20px 0 10px;
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 40px 5% 20px;
-            font-size: 0.9rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 30px;
-        }
-
-        .footer-col {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .footer-col h4 {
-            color: var(--accent-color);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .footer-col p {
-            margin-bottom: 10px;
-            color: #bdc3c7;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            color: #7f8c8d;
-            font-size: 0.8rem;
-        }
-
-        /* Responsividade Básica */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            .hero {
-                height: auto;
-                padding: 60px 20px;
-            }
-        }
-    </style>
+.whatsapp-fixo{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.3);
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Menu de Navegação -->
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">MASS <span>INSURANCE</span></a>
-            <ul class="nav-menu">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#quem-somos">Quem Somos</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#privacidade">Privacidade</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <div class="logo">Central de Ajuda</div>
 
-    <!-- Banner Principal -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Protegendo o que mais importa para você</h1>
-            <p>A Mass Insurance oferece soluções personalizadas em seguros para garantir a sua tranquilidade, de sua família e do seu patrimônio.</p>
-            <a href="#servicos" class="btn-cta">Conheça nossos planos</a>
+    <a href="https://wa.me/5521979257982" class="btn-topo">
+        Fale Conosco
+    </a>
+</header>
+
+<section class="hero">
+    <h1>Atendimento Rápido e Especializado</h1>
+
+    <p>
+        Nossa equipe está preparada para ajudar você com rapidez,
+        segurança e qualidade. Entre em contato agora mesmo e receba
+        suporte personalizado pelo WhatsApp.
+    </p>
+
+    <div class="botoes">
+        <a href="https://wa.me/5521979257982" class="btn">Fale Conosco</a>
+        <a href="https://wa.me/5521979257982" class="btn">WhatsApp</a>
+    </div>
+</section>
+
+<section class="sobre">
+    <h2>Por que escolher nossa equipe?</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>⚡ Atendimento Rápido</h3>
+            <p>
+                Respostas rápidas para resolver suas dúvidas e necessidades
+                sem complicações.
+            </p>
         </div>
-    </section>
 
-    <!-- Seção: Quem Somos -->
-    <section id="quem-somos" class="section">
-        <h2 class="section-title">Quem Somos</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>A <strong>MASS INSURANCE CORRETORA DE SEGUROS LTDA</strong> é uma empresa sólida e comprometida em oferecer as melhores soluções de proteção e gestão de riscos do mercado.</p>
-                <p>Nossa missão é guiar nossos clientes na escolha do seguro ideal, simplificando processos e garantindo um atendimento humano, ágil e totalmente transparente. Trabalhamos em parceria com as maiores e mais confiáveis seguradoras do país.</p>
-                <p>Com sede em Uberlândia - MG, unimos tecnologia e consultoria especializada para entregar segurança sob medida para você, sua família ou sua empresa.</p>
-            </div>
+        <div class="card">
+            <h3>👨‍💼 Equipe Preparada</h3>
+            <p>
+                Profissionais treinados e capacitados para oferecer o melhor suporte.
+            </p>
         </div>
-    </section>
 
-    <!-- Seção: Serviços -->
-    <section id="servicos" class="section" style="background-color: #f1f5f9;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">Nossos Serviços</h2>
-            <div class="services-grid">
-                
-                <div class="service-card">
-                    <h3>Seguro Auto</h3>
-                    <p>Proteção completa para o seu veículo contra roubo, furto, acidentes e assistência 24h para você dirigir sem preocupações.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Seguro Residencial</h3>
-                    <p>Proteja seu lar e os bens que você conquistou com coberturas para incêndios, danos elétricos, vendavais e serviços emergenciais.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Seguro de Vida</h3>
-                    <p>A garantia de amparo financeiro e segurança que a sua família precisa nos momentos mais delicados, com planos adaptados ao seu perfil.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Seguros Empresariais</h3>
-                    <p>Proteja as operações, o patrimônio físico e os colaboradores da sua empresa para focar exclusivamente no crescimento do seu negócio.</p>
-                </div>
-
-            </div>
+        <div class="card">
+            <h3>✅ Suporte Confiável</h3>
+            <p>
+                Atendimento humanizado com foco em qualidade e satisfação.
+            </p>
         </div>
-    </section>
 
-    <!-- Seção: Políticas de Privacidade -->
-    <section id="privacidade" class="section">
-        <h2 class="section-title">Política de Privacidade</h2>
-        <div class="privacy-box">
-            <p>A <strong>MASS INSURANCE CORRETORA DE SEGUROS LTDA</strong> valoriza a sua privacidade. Esta política descreve como tratamos e protegemos as informações e dados pessoais coletados ao interagir com nossos serviços de consultoria e cotação de seguros.</p>
-            
-            <h3>1. Coleta de Informações</h3>
-            <p>Coletamos dados estritamente necessários para a elaboração de propostas de seguros (tais como nome, documentos de identificação, dados de contato e dados do bem a ser segurado) junto às seguradoras parceiras.</p>
-            
-            <h3>2. Uso dos Dados</h3>
-            <p>Seus dados são utilizados exclusivamente para analisar os riscos, calcular orçamentos de seguros solicitados por você e para a gestão do seu contrato ativo de seguro.</p>
-            
-            <h3>3. Compartilhamento de Dados</h3>
-            <p>Não vendemos ou comercializamos seus dados. Eles são compartilhados apenas com as empresas seguradoras parceiras devidamente autorizadas pela SUSEP, com o único objetivo de emitir e gerenciar a sua apólice.</p>
-            
-            <h3>4. Segurança</h3>
-            <p>Adotamos medidas técnicas de segurança para proteger suas informações contra acessos não autorizados e garantir a confidencialidade exigida pela LGPD (Lei Geral de Proteção de Dados).</p>
+        <div class="card">
+            <h3>📱 Atendimento pelo WhatsApp</h3>
+            <p>
+                Fale diretamente com nossa equipe através do WhatsApp.
+            </p>
         </div>
-    </section>
 
-    <!-- Rodapé -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>MASS INSURANCE</h4>
-                <p>Sua segurança é o nosso maior compromisso.</p>
-                <p>CNPJ: 86.492.394/0001-68</p>
-            </div>
-            <div class="footer-col">
-                <h4>Endereço</h4>
-                <p>RUA JOSÉ CUNHA CHAVES, 405</p>
-                <p>JARDIM COLINA</p>
-                <p>UBERLÂNDIA - MG</p>
-                <p>CEP: 38411-338 | Brasil</p>
-            </div>
-            <div class="footer-col">
-                <h4>Links Úteis</h4>
-                <p><a href="#inicio" style="color:#bdc3c7; text-decoration:none;">Início</a></p>
-                <p><a href="#quem-somos" style="color:#bdc3c7; text-decoration:none;">Quem Somos</a></p>
-                <p><a href="#servicos" style="color:#bdc3c7; text-decoration:none;">Serviços</a></p>
-                <p><a href="#privacidade" style="color:#bdc3c7; text-decoration:none;">Política de Privacidade</a></p>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2026 MASS INSURANCE CORRETORA DE SEGUROS LTDA. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Precisa de ajuda agora?</h2>
+
+    <p>
+        Entre em contato com nossa equipe e receba atendimento imediato.
+    </p>
+
+    <br>
+
+    <a href="https://wa.me/5521979257982" class="btn">
+        Solicitar Atendimento
+    </a>
+</section>
+
+<footer>
+    © 2026 Central de Ajuda - Todos os direitos reservados.
+</footer>
+
+<a href="https://wa.me/5521979257982" class="whatsapp-fixo">
+    💬
+</a>
 
 </body>
 </html>
